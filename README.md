@@ -1,5 +1,8 @@
 # Vortex | A simple cheat loader
-A simple cheat loader made in C#.
+This loader is for beginners that do not have the enough knowledge to code.
+
+# Note
+This loader is not safe to use for any P2C your stuff will get leaked if you do.
 
 ## Screenshots
 
