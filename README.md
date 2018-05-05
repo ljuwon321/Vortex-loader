@@ -48,7 +48,8 @@ A: Make sure dll's are not protected by vmprotect! VMPROTECT IS USELESS! Vmprote
 ___
 **Q: Getting a error such as this? https://i.imgur.com/YOVCxdr.png**
 
-A: This is most commonly due to error connecting to server and has NOTHING to do with your incorrect login. This issue is most commonly found when using blazing fast or some kind of anti ddos solution (Tested that it does work with cloudflare). A simple solution is to either to connect to the main server ip or buy hosting from Ember Servers!
+A: This is most commonly due to error connecting to server and has NOTHING to do with your incorrect login. This issue is most commonly found when using blazing fast or some kind of anti ddos solution (Tested that it does work with cloudflare).
+
 ___
 **Q: Login incorrect!**
 
