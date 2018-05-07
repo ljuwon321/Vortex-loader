@@ -1,5 +1,5 @@
 # Vortex | A C# simple cheat loader
-This loader is for beginners that do not have the enough knowledge to code.
+This loader is for beginners that do not have the enough knowledge to code one.
 
 # Discord
 [Vortex's Discord server](https://discord.gg/9ntPfFC)
