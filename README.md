@@ -1,6 +1,9 @@
 # Vortex Simple | A C# simple cheat loader
 This loader is for beginners that do not have the enough knowledge to code.
 
+# Discord
+[Vortex's Discord server](https://discord.gg/9ntPfFC)
+
 # Note
 - This loader is not safe to use for any P2C your stuff will get leaked if you do.
 - This loader is in beta state report all bugs to me.
