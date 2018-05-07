@@ -1,4 +1,4 @@
-# Vortex | A simple cheat loader
+# Vortex Simple | A C# simple cheat loader
 This loader is for beginners that do not have the enough knowledge to code.
 
 # Note
