@@ -1,7 +1,7 @@
 # Vortex | A C# simple cheat loader
 Vortex is a C# loader for people who can't code one.
 
-##[Information](https://github.com/Kanepu/Vortex-loader/wiki)
+## [Information](https://github.com/Kanepu/Vortex-loader/wiki)
 
 ## Screenshots
 
