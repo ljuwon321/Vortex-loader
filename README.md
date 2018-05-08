@@ -1,13 +1,6 @@
 # Vortex | A C# simple cheat loader
 [Information](https://github.com/Kanepu/Vortex-loader/wiki)
 
-# Discord
-[Vortex's Discord server](https://discord.gg/9ntPfFC)
-
-# Note
-- This loader is not safe to use for any P2C your stuff will get leaked if you do.
-- This loader is in beta state report all bugs to me.
-
 ## Screenshots
 
 <p align="center">
