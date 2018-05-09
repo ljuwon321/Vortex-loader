@@ -23,4 +23,4 @@ Vortex is a C# loader for people who can't code one.
 
 [weakspider](https://www.unknowncheats.me/forum/members/172964.html) for the [Injection method](https://www.unknowncheats.me/forum/c-/213037-x86-manual-map-injection.html)
 
-[Roshly](https://github.com/Roshly): Used his php script and copied some stuff from his readme.mb.
+[Roshly](https://github.com/Roshly) used his php script and copied some stuff from his readme.mb.
