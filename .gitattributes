@@ -1,2 +1,2 @@
-* linguist-vendored
-*.cs linguist-vendored=false
+* linguist-language
+*.cs linguist-language=Java
