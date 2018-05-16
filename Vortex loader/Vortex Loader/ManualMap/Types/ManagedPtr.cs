@@ -1,0 +1,129 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Vortex_Loader.ManualMap.Types
+{
+    public class ManagedPtr<T> where T : struct
+    {
+        public IntPtr Address { get; }
+
+        public T Value
+        {
+            get { return this[0]; }
+        }
+
+        private int? _structSize;
+
+        public int StructSize
+        {
+            get
+            {
+                if (_structSize == null)
+                {
+                    _structSize = Marshal.SizeOf(typeof(T));
+                }
+
+                return _structSize.Value;
+            }
+        }
+
+        private static T GetStructure(IntPtr address)
+        {
+            return (T)Marshal.PtrToStructure(address, typeof(T));
+        }
+
+        public T this[uint index]
+        {
+            get { return GetStructure(Address + (int)index * StructSize); }
+        }
+
+        public static ManagedPtr<T> operator +(ManagedPtr<T> c1, int c2)
+        {
+            return new ManagedPtr<T>(c1.Address + c2 * c1.StructSize);
+        }
+
+        public static ManagedPtr<T> operator ++(ManagedPtr<T> a)
+        {
+            return a + 1;
+        }
+
+        public static ManagedPtr<T> operator -(ManagedPtr<T> c1, int c2)
+        {
+            return new ManagedPtr<T>(c1.Address - c2 * c1.StructSize);
+        }
+
+        public static ManagedPtr<T> operator --(ManagedPtr<T> a)
+        {
+            return a - 1;
+        }
+
+        public static explicit operator ManagedPtr<T>(IntPtr ptr)
+        {
+            if (ptr == IntPtr.Zero)
+            {
+                return null;
+            }
+
+            return new ManagedPtr<T>(ptr);
+        }
+
+        public static explicit operator IntPtr(ManagedPtr<T> ptr)
+        {
+            return ptr.Address;
+        }
+
+        private GCHandle _handle;
+
+        private bool _freeHandle;
+
+        public ManagedPtr(IntPtr address)
+        {
+            Address = address;
+        }
+
+        public ManagedPtr(object value, bool freeHandle = true)
+        {
+            if (value == null)
+            {
+                throw new InvalidOperationException("Cannot create a pointer of type null");
+            }
+
+            try
+            {
+                _handle = GCHandle.Alloc(value, GCHandleType.Pinned);
+            }
+            catch (Exception)
+            {
+                throw new InvalidOperationException($"Cannot create a pointer of type {value.GetType().Name}");
+            }
+
+            _freeHandle = freeHandle;
+            Address = _handle.AddrOfPinnedObject();
+        }
+
+        ~ManagedPtr()
+        {
+            if (_handle.IsAllocated && _freeHandle)
+            {
+                _handle.Free();
+            }
+        }
+    }
+}
+
+//-----------------------------------------------------
+// Coded by Kanepu! Vortex loader source
+// https://github.com/Kanepu/Vortex-loader
+// Note to the person using this, removing this
+// text is in violation of the license you agreed
+// to by downloading. Only you can see this so what
+// does it matter anyways.
+// Copyright © Kanepu 2018
+// Licensed under a MIT license
+// Read the terms of the license here
+// https://github.com/Kanepu/Vortex-loader/blob/master/LICENSE
+//-----------------------------------------------------
