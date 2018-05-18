@@ -56,21 +56,7 @@ namespace Vortex_Loader
                 var newversionparsed = int.Parse(newversion);
                 if (settings.version < newversionparsed) //check if the version in the txt file is higher than the one in settings.cs
                 {
-                    progressBar1.Increment(1);
-                    if (progressBar1.Value == 50)
-                    {
-                        string path = @"C:\Users\Public\Documents\LoaderPath.txt";
-
-                        if (!File.Exists(path))
-                        {
-                            using (StreamWriter sw = File.CreateText(path))
-                            {
-                                sw.WriteLine(System.Reflection.Assembly.GetEntryAssembly().Location);
-                            }
-                        }
-                    }
-                    if (progressBar1.Value == 100)
-                    {
+                        progressBar1.Increment(1);
                         var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
                         var stringChars = new char[8];
                         var random = new Random();
@@ -85,7 +71,6 @@ namespace Vortex_Loader
                         myWebClient.DownloadFile(settings.loaderexe, Directory.GetCurrentDirectory() + "/" + finalString + ".exe");
                         System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "/" + finalString + ".exe");
                         Application.Exit();
-                    }
 
                   
                 } else
