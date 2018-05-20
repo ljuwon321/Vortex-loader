@@ -19,6 +19,11 @@ and dont mind the 40+ commits im just testing sum stuff
  <img src="https://i.gyazo.com/7e678d045ea146f1bc27f52275ba93b4.png">
 </p>
 
+## Changelog
+
+### 19/5/2018
+* Fixed auto updater
+
 ## Credits
 
 [HazzardEdit](https://www.youtube.com/channel/UCG0LukbgMa6vJkA_JJ4Jepg) for the [HWID creation and encryption code.](https://www.youtube.com/watch?v=M1-pAqPqJcw)
